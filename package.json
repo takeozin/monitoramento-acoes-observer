@@ -1,0 +1,22 @@
+{
+  "name": "monitoramento-acoes-observer",
+  "version": "1.0.0",
+  "description": "Implementação do padrão de projeto Observer para o Sistema de Monitoramento de Ações. Atividade da disciplina de Programação para Web - UNDB.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "observer",
+    "design-pattern",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}
