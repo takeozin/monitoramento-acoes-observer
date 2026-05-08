@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoramento de Ações - Observer Pattern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>Mercado de Ações</h1>
+        <p>Demonstração do padrão de projeto Observer</p>
+      </header>
+
+      <main class="dashboard">
+        <!-- Controle de Preço (Subject Control) -->
+        <section class="card glass-card subject-card">
+          <div class="card-header">
+            <h2>Controle do Subject</h2>
+            <span class="badge">Ação Central</span>
+          </div>
+          
+          <div class="stock-info">
+            <h3 id="stock-name">PETR4</h3>
+            <div class="price-control">
+              <span class="currency">R$</span>
+              <span id="current-price" class="price">35.50</span>
+            </div>
+          </div>
+          
+          <div class="actions">
+            <button id="btn-decrease" class="btn btn-danger">Diminuir Preço</button>
+            <button id="btn-increase" class="btn btn-success">Aumentar Preço</button>
+          </div>
+          <div class="input-group">
+            <input type="number" id="input-price" step="0.01" placeholder="Novo preço" />
+            <button id="btn-set" class="btn btn-primary">Definir</button>
+          </div>
+        </section>
+
+        <!-- Corretoras (Observers) -->
+        <div class="observers-container">
+          <section class="card glass-card observer-card">
+            <div class="card-header">
+              <h2>Corretora Alfa</h2>
+              <span class="badge observer-badge">Observer 1</span>
+            </div>
+            <div class="broker-display">
+              <p>Última cotação recebida:</p>
+              <div class="price-tag" id="display-alfa">Aguardando...</div>
+            </div>
+          </section>
+
+          <section class="card glass-card observer-card">
+            <div class="card-header">
+              <h2>Corretora Beta</h2>
+              <span class="badge observer-badge">Observer 2</span>
+            </div>
+            <div class="broker-display">
+              <p>Última cotação recebida:</p>
+              <div class="price-tag" id="display-beta">Aguardando...</div>
+            </div>
+            <div class="connection-control">
+              <button id="btn-toggle-beta" class="btn btn-outline">Desconectar</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Logs do Sistema -->
+        <section class="card glass-card logs-card">
+          <div class="card-header">
+            <h2>Logs do Sistema (Logger)</h2>
+            <span class="badge observer-badge">Observer 3</span>
+          </div>
+          <div class="logs-container" id="logs-container">
+            <!-- Logs serão inseridos aqui -->
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/web.ts"></script>
+  </body>
+</html>
